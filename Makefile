@@ -1,6 +1,6 @@
 VERSION = 4
 PATCHLEVEL = 4
-SUBLEVEL = 245
+SUBLEVEL = 246
 EXTRAVERSION =
 NAME = Blurry Fish Butt
 
@@ -434,7 +434,6 @@ export RCS_FIND_IGNORE := \( -name SCCS -o -name BitKeeper -o -name .svn -o    \
 export RCS_TAR_IGNORE := --exclude SCCS --exclude BitKeeper --exclude .svn \
 			 --exclude CVS --exclude .pc --exclude .hg --exclude .git
 
-# ===========================================================================
 # Rules shared between *config targets and build targets
 
 # Basic helpers built in scripts/
@@ -507,7 +506,6 @@ ifneq ($(filter install,$(MAKECMDGOALS)),)
 endif
 
 ifeq ($(mixed-targets),1)
-# ===========================================================================
 # We're called with mixed targets (*config and build targets).
 # Handle them one by one.
 
@@ -524,7 +522,6 @@ __build_one_by_one:
 
 else
 ifeq ($(config-targets),1)
-# ===========================================================================
 # *config targets only - make sure prerequisites are updated, and descend
 # in scripts/kconfig to make the *config target
 
@@ -541,7 +538,6 @@ config: scripts_basic outputmakefile FORCE
 	$(Q)$(MAKE) $(build)=scripts/kconfig $@
 
 else
-# ===========================================================================
 # Build targets only - this includes vmlinux, arch specific targets, clean
 # targets and others. In general all targets except *config targets.
 
